@@ -1,0 +1,10 @@
+# Root dev tooling (Biome binary for the VS Code extension).
+node_modules/
+
+# OS / editor cruft.
+# Per-folder build output and dependencies are ignored by next/.gitignore and
+# supabase/.gitignore respectively.
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

@@ -1,0 +1,28 @@
+{
+	"name": "Maets",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"mounts": [
+		// These overlay mounts are required because npm packages are platform dependent when installed and .next is too.
+		"source=maets-next-node-modules,target=${containerWorkspaceFolder}/next/node_modules,type=volume",
+		"source=maets-next-build,target=${containerWorkspaceFolder}/next/.next,type=volume",
+		"source=maets-docker-data,target=/var/lib/docker,type=volume"
+	],
+	"features": {
+		// Supabase start utilizes docker to spin it's environment
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+	"forwardPorts": [3000, 54321, 54323],
+	"postCreateCommand": "bash .devcontainer/post-create.sh",
+	"postStartCommand": "bash .devcontainer/post-start.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"biomejs.biome",
+				"Supabase.vscode-supabase-extension",
+				"bradlc.vscode-tailwindcss"
+			]
+		}
+	}
+}

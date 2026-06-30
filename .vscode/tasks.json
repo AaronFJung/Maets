@@ -1,0 +1,63 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Frontend",
+			"detail": "Runs the Next.JS server in development mode.",
+			"type": "shell",
+			"command": "[ -x node_modules/.bin/next ] && npm run dev",
+			"options": {
+				"cwd": "${workspaceFolder}/next"
+			},
+			"isBackground": true,
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"group": "maets"
+			}
+		},
+		{
+			"label": "Supabase Status",
+			"detail": "Show local Supabase URLs and keys",
+			"type": "shell",
+			"command": "supabase status",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"panel": "dedicated",
+				"group": "maets"
+			}
+		},
+		{
+			"label": "Supabase: Reset Database",
+			"detail": "Rebuild the local database from migrations",
+			"type": "shell",
+			"command": "supabase db reset",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"panel": "dedicated",
+				"group": "maets"
+			}
+		},
+		{
+			"label": "Supabase: Stop",
+			"detail": "Stop the local Supabase stack",
+			"type": "shell",
+			"command": "supabase stop",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"panel": "dedicated",
+				"group": "maets"
+			}
+		}
+	]
+}
