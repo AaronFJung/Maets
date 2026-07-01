@@ -6,12 +6,7 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"includes": [
-			"**",
-			"!**/package-lock.json",
-			"!**/public",
-			"!**/*.css"
-		]
+		"includes": ["**", "!**/package-lock.json", "!**/public", "!**/*.css"]
 	},
 	"formatter": {
 		"enabled": true,
